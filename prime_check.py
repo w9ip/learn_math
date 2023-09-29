@@ -1,9 +1,8 @@
 def is_prime(n):
-    lst = []
+    c = 0
     for i in range(1, n + 1):
         if n % i == 0:
-            lst.append(n % i)
-    return 2 == len(lst)
+            c += 1
+        if c > 2: return False
+    return 2 == c
 
-
-print(is_prime(2))
