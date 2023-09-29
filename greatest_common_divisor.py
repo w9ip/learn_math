@@ -1,16 +1,15 @@
-from prime_check import is_prime
+from prime_factorization import factorization
+from collections import Counter
 
-
-def gcd(nums: list[int]) -> int:
+def gcd(nums):
     if len(nums) < 2:
-        return 'Need two or more nums'
+        raise Exception('Need two or more nums')
     
-    all_divisors = []
-    for num in nums:
-        num_divisors = []
-        i = 2
-        while num != 1 and num % i == 0:
-            print(num)
-            num = num / i
+    facts = [factorization(n) for n in nums]
+    for i in facts:
+        print(Counter(i))
+    # Осталось реализловать:
+    # Общие множители которые находятся во всех последовательностях.
+    # Произведение общих множителей и будет являться НОД.
 
-print(gcd([26, 48]))
+gcd([36, 48])

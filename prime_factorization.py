@@ -10,6 +10,8 @@ def primes_generator(n):
 
 
 def factorization(n) -> list:
+    if is_prime(n):
+        raise Exception(f'The num {n} is prime.')
     g = primes_generator(n)
     p = next(g)
     primes = []
@@ -21,6 +23,3 @@ def factorization(n) -> list:
             p = next(g)
     return primes
 
-
-
-print(factorization(48))
